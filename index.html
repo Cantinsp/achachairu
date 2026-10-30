@@ -737,6 +737,17 @@
   };
 
   // ───────────────────────────────────────────────────────
+
+  // ── PIN para Administración
+  window.solicitarPinAdmin = function() {
+    const pin = prompt("Ingrese PIN de Administración:");
+    if (pin === "3555") {
+      seleccionarModo("admin");
+    } else if (pin !== null) {
+      alert("PIN incorrecto.");
+    }
+  };
+
   //  EXPONER seleccionarModo al HTML
   // ───────────────────────────────────────────────────────
   window.seleccionarModo = seleccionarModo;
@@ -1019,7 +1030,7 @@ tr:hover td { background: rgba(201,162,39,0.05); }
       <p>Registrar ingreso y salida de visitantes</p>
     </div>
 
-    <div class="sel-card" onclick="seleccionarModo('admin')">
+    <div class="sel-card" onclick="solicitarPinAdmin()">
       <div class="ico">🖥️</div>
       <h3>Administración</h3>
       <p>Panel completo · Exportar reportes</p>
